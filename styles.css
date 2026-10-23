@@ -1,0 +1,203 @@
+/* General styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #0f1020;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+/* PixelPulse logo */
+.hed {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    display: inline-block;
+
+    background: linear-gradient(
+        90deg,
+        #a78bfa,
+        #6366f1,
+        #22b8cf
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Search form */
+#search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Search input */
+#search-input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 15px;
+    background-color: #191b30;
+    color: #ffffff;
+    border: 1px solid #30334f;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#search-input::placeholder {
+    color: #9295ad;
+}
+
+#search-input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+/* Search button */
+#search-form button {
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+#search-form button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+
+#status {
+    color: #a5a8c4;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Image results grid */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .hed {
+        font-size: 26px;
+    }
+
+    #search-form {
+        gap: 8px;
+    }
+
+    #search-input {
+        padding: 12px 10px;
+    }
+
+    #search-form button {
+        padding: 12px 15px;
+    }
+
+    #results {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+/* Clear button */
+#clear-button {
+    padding: 12px 20px;
+    background-color: #252740;
+    color: #c4b5fd;
+    border: 1px solid #454968;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#clear-button:hover {
+    background-color: #373958;
+    color: #ffffff;
+}
+/* Search suggestions */
+.suggestions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 650px;
+    padding: 0 10px;
+}
+
+.suggestion-label {
+    color: #9295ad;
+    font-size: 13px;
+}
+
+.suggestion {
+    padding: 7px 13px;
+    border: 1px solid #30334f;
+    border-radius: 20px;
+    background-color: #191b30;
+    color: #c4b5fd;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion:hover {
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .suggestions {
+        gap: 7px;
+    }
+
+    .suggestion {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+}
